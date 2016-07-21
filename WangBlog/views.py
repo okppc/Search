@@ -10,9 +10,13 @@ def hello(request):
 
 
 def login(request):
+    print('hello')
     if "POST" == request.method:
-        uf = UserForm(request.POST)
+        print('hello0')
+        uf = UserForm(request.POST, request.FILES)
+        print('hello0.5')
         if uf.is_valid():
+            print('hello11')
             username = uf.cleaned_data['username']
             password = uf.cleaned_data['password']
             email = uf.cleaned_data['email']
@@ -20,12 +24,18 @@ def login(request):
             print(password)
             print(email)
             success = User.objects.filter(username=username, password=password, email=email)
+            print('hello1')
             if success:
-                return render(request, "index.html", locals())
+                print('hello2')
+                return render(request, "index.html", {'username': username})
             else:
+                print('hello3')
                 return render(request, "login.html", locals())
+        else:
+            print('hello22')
     else:
         uf = UserForm()
+    print('hello4')
     return render(request, "login.html", locals())
 
 

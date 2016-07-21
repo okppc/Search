@@ -7,11 +7,12 @@
 <body>
     <h1>这是一个登陆页面</h1>
     <h3>恭喜你注册成功!{{ username }} 请登录你的账号</h3>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         </br>
-        <input type="text" value="" name="username"></br></br>
-        <input type="password" value="" name="password"></br></br>
-        <input type="email" value="" name="email"></br></br>
+        {{ uf.as_p }}
+        <!--<input type="text" value="" name="username"></br></br>-->
+        <!--<input type="password" value="" name="password"></br></br>-->
+        <!--<input type="email" value="" name="email"></br></br>-->
         <input type="submit" value="登录" name="submit"></br>
     </form>
 </body>
