@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>欢迎注册用户账号</h1>
+    <h3>欢迎用户 {{ username}}</h3>
+    <form method="post" enctype="multipart/form-data">
+        {{ uf.as_p}}
+    <input type="submit" value="注册" name="submit">
+    </form>
+</body>
+</html>
